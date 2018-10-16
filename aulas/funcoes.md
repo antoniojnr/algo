@@ -68,3 +68,36 @@ Reimplemente as seguintes funções de Python:
 1. `len2()`
 2. `range2(a, b)` (implemente apenas o `range()` que leva dois parâmetros)
 3. `in2(a, b)` (esta função verifica se o elemento ou caractere `a` existe na lista ou string `b`)
+
+Utilize exceções para melhorar as seguintes funções:
+```python
+def examplo1():
+    for i in range(3):
+        x = int(raw_input("insira um numero: "))
+        y = int(raw_input("insira outro numero: "))
+        print(x, '/', y, '=', x/y)
+```
+
+Teste com as seguintes entradas:
+```
+4
+0
+```
+
+```
+joao
+maria
+```
+
+```python
+def soma(lista):
+    sum = 0
+    for v in lista:
+        sum = sum + v
+    return sum
+```
+
+Teste com o seguinte parâmetro:
+```python
+lista = ['a', 'b', 'c']
+```
