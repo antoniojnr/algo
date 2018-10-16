@@ -47,3 +47,10 @@ def calcular(a, b, op):
 É preciso tomar cuidado com o retorno de funções cuja execução pode tomar múltiplos caminhos, como a função `calcular()` acima. Esta função pode retornar um resultado ou não, dependendo dos parâmetros passados. Por exemplo, caso o parâmetro `op` não seja um dos valores esperados nas condições, então a função retornará `None`, que representa um resultado nulo.
 
 Você pode definir funções e escrever seu código em um único script Python. Mas, futuramente, você verá formas melhores de organizá-lo em módulos ou classes.
+
+## Exercícios
+
+Reimplemente as seguintes funções de Python:
+1. `len()`
+2. `range(a, b)` (implemente apenas o `range()` que leva dois parâmetros)
+3. `in(a, b)` (esta função verifica se o elemento ou caractere `a` existe na lista ou string `b`)
