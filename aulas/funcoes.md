@@ -71,7 +71,7 @@ Reimplemente as seguintes funções de Python:
 
 Utilize exceções para melhorar as seguintes funções:
 ```python
-def examplo1():
+def exemplo1():
     for i in range(3):
         x = int(raw_input("insira um numero: "))
         y = int(raw_input("insira outro numero: "))
