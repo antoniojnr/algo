@@ -10,7 +10,7 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Conecta ao servidor rodando no endereço 'localhost', porta 50000
-server_address = ('127.0.0.1', 50000)
+server_address = ('localhost', 5432)
 print 'Conectando a %s na porta %s' % server_address
 # Conecta o socket ao host especificado, na porta especificada
 sock.connect(server_address)
