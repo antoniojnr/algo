@@ -4,6 +4,7 @@
 import socket
 import thread
 import random
+from datetime import datetime
 
 caixas = {}
 
@@ -72,9 +73,35 @@ def on_new_client(clientsocket,addr):
                     else:
                         clientsocket.send('Usuario ou senha incorretos.')
                 # enviar nome senha destinatario assunto mensagem
-                elif comando[0] == 'rec':
+                elif comando[0] == 'env':
+                    dono = comando[1]
+                    senha = comando[2]
+                    dest = comando[3]
+                    ast = comando[4]
+                    msg = comando[5:]
+
+                    if fazer_login(dono, senha):
+                        if dest in caixas:
+                            nova = {
+                                'rem': dono,
+                                'dest': dest,
+                                'assunto': ast,
+                                'msg': ' '.join(msg),
+                                'data': str(datetime.now())
+                            }
+                            caixa_remt = caixas[dono]['enviadas']
+                            caixa_dest = caixas[dest]['recebidas']
+
+                            caixa_remt.append(nova)
+                            caixa_dest.append(nova)
+
+                            clientsocket.send('Sua mensagem foi enviada: %s' % str(nova))
+                        else:
+                            clientsocket.send('Destinatario inexistente.')
+                    else:
+                        clientsocket.send('Usuario ou senha incorretos.')
                 else:
-                    sck.send('Nao entendi seu comando.')
+                    clientsocket.send('Nao entendi seu comando.')
 
                     # Responda com uma mensagem de volta para o cliente que enviou
                     # msg = raw_input('Sua msg <<< ')
